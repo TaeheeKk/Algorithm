@@ -1,0 +1,13 @@
+T = int(input())
+
+for t in range(T):
+    a = int(input()) #3
+    day = list(map(int, input().split()))
+    m = day[a-1] #마지막부터
+    profit = 0
+    for i in range(a-2,-1,-1):
+        if day[i]<= m:
+            profit += m - day[i]
+        else:
+            m = day[i]
+    print(f"#{t+1} {profit}")
